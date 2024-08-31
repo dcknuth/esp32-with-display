@@ -87,3 +87,41 @@ else:
     print(f"Failed to download file: {response.status_code}")
 ```
 since browsers now stop you from downloading a zip from a non-https URL. I combined the hello and LED example scripts with a bit of modification and following the video's setup for a project. [This](esp32-hello-world) worked. Now I will have to start layering on features one-by-one the slow, hard way.
+
+## Simple Display Example
+Build environments are a pain. It took two days to see this:
+![Hello world displayed](hello_world.png)
+The part that caused the most confusion was how PlatformIO handles dependancies. It seems that I needed to have all '#define's in the platformio.ini file with a build_flags entry. Like this
+```
+; These are needed even with the correct User_setup.h so that dependancies
+; in the .pio direcory build correctly
+build_flags =
+    -D USER_SETUP_LOADED
+    -D TFT_WIDTH=320
+    -D TFT_HEIGHT=480
+    -D TFT_BL=27
+    -D TFT_BACKLIGHT_ON=HIGH
+    -D ST7796_DRIVER
+    -D TFT_MISO=12
+    -D TFT_MOSI=13
+    -D TFT_SCLK=14
+    -D TFT_CS=15
+    -D TFT_DC=2
+    -D TFT_RST=-1
+    -D TOUCH_CS=33
+    -D LOAD_GLCD
+    -D LOAD_FONT2
+    -D LOAD_FONT4
+    -D LOAD_FONT6
+    -D LOAD_FONT7
+    -D LOAD_FONT8
+    -D LOAD_GFXFF
+    -D SMOOTH_FONT
+    -D SPI_FREQUENCY=65000000
+    -D SPI_READ_FREQUENCY=20000000
+    -D SPI_TOUCH_FREQUENCY=2500000
+```
+Then to be sure everything was updated, I deleted the .pio directory and restarted VS Code. Then rebuilt the project, which worked even though there were some editor warnings until the compile was done.
+The project for this is [here](screen-test)
+
+Now I think I know what I need to get some other examples to run before I start with an actual project.
