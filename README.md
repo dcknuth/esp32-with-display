@@ -124,4 +124,10 @@ build_flags =
 Then to be sure everything was updated, I deleted the .pio directory and restarted VS Code. Then rebuilt the project, which worked even though there were some editor warnings until the compile was done.
 The project for this is [here](screen-test)
 
-Now I think I know what I need to get some other examples to run before I start with an actual project.
+Now I think I know what I need to get some other examples to run before I start with an actual project. I have gotten these included projects to also run:
+* [tft-rainbow](tft-rainbow) Draws a few things to the screen
+* [flash_png](flash_png) Draws a panda PNG to the screen with different backgrounds. Does not use the card reader, but loads via a .h file to flash instead. I needed to move a function to the top of the code so it would not be seen as undeclared
+* [tf_card](tf_card) This one is not working yet. It will not see the card if it is >4G and will fail at initialization. With a 4G card it sees the card, but seems to have trouble reading the file. I will test with another card soon.
+
+
+I have not been able to get the repo from rzeldent to run, but in a CYD (cheap yellow display) forum note, he seems to have hacked his copy for a different refresh rate. I will try a different board later, but I think I have what I need for now.
