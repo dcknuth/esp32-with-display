@@ -32,11 +32,11 @@ The Arduino.h error is still there, but the project must have successfully pulle
 
 A search says that a build still might work, so I plugged in the board via USB and tried the PlatformIO upload button. A lot of errors trying to compile a lot of items, but no change to the header status and no upload to the board
 
-I may have needed to install the driver for the board which one can find [here](https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/all#drivers-if-you-need-them)
+I may have needed to install the driver for the board which one can find [here](https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/all#drivers-if-you-need-them).
 Yep, after installing the driver and relaunching VS Code, I can see the board in the PlatformIO devices list
 
 I tried the upload arrow again, but the build is still not working. Still have the the Arduino.h issue, but it seems to be missing a sub-dependancy, arduino_pins.h.
-[This](https://community.platformio.org/t/fatal-error-pins-arduino-h-no-such-file-or-directory/19634/5) says to exit VS Code, remove the .platformio directory and restart VS Code
+[This](https://community.platformio.org/t/fatal-error-pins-arduino-h-no-such-file-or-directory/19634/5) says to exit VS Code, remove the .platformio directory and restart VS Code.
 You will have to wait for PlatformIO to reinstall. There was some CMakeLists.txt dropdown thing going on, but the install seemed to finish and it configured the project and the Arduino.h error is now gone
 
 Getting this far I have also run into [this](https://github.com/witnessmenow/ESP32-Cheap-Yellow-Display/blob/main/SETUP.md) helpful repo for an older version of the board. This is where the driver information came from.
