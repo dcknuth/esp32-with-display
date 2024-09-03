@@ -127,7 +127,8 @@ The project for this is [here](screen-test)
 Now I think I know what I need to get some other examples to run before I start with an actual project. I have gotten these included projects to also run:
 * [tft-rainbow](tft-rainbow) Draws a few things to the screen
 * [flash_png](flash_png) Draws a panda PNG to the screen with different backgrounds. Does not use the card reader, but loads via a .h file to flash instead. I needed to move a function to the top of the code so it would not be seen as undeclared
-* [tf_card](tf_card) This one is not working yet. It will not see the card if it is >4G and will fail at initialization. With a 4G card it sees the card, but seems to have trouble reading the file. I will test with another card soon
+* [tf_card](tf_card) This one is not working yet. It will not see the card if it is >4G and will fail at initialization. With a 4G card it sees the card, but seems to have trouble reading the file. I will test with another card soon.
+UPDATE: It was not the card. Even though the example code specifically says to initialize the CF card reader first, you actually need to initialize the TFT first. The tf_card code should now work
 * [rotary_encoder](rotary_encoder) This is not one of the included programs, but I will need a rotating dial for a project and this was just a quick test. This was the hook up with the included connector
 ![Rotary Encoder connections](rotary_encoder.png)
 Seems to work fine given 3.3 volts. Thanks to [The Drone Bot Workshop](https://dronebotworkshop.com/rotary-encoders-arduino/) for a place to start. Encoder was left over from a [light up dress project](https://www.youtube.com/watch?v=S583nWCTwY8)

@@ -49,18 +49,18 @@ void setup()
   Serial.begin(115200);
   Serial.println("\n\n Testing TJpg_Decoder library");
 
-  // Initialise SD before TFT
-  if (!SD.begin(SD_CS)) {
-    Serial.println(F("SD.begin failed!"));
-    while (1) delay(0);
-  }
-  Serial.println("\r\nInitialisation done.");
-
   // Initialise the TFT
   tft.begin();
   tft.setTextColor(0xFFFF, 0x0000);
   tft.fillScreen(TFT_BLACK);
   tft.setSwapBytes(true); // We need to swap the colour bytes (endianess)
+
+  // Initialise SD before TFT (actually, the tft needs to go first for esp32)
+  if (!SD.begin(SD_CS)) {
+    Serial.println(F("SD.begin failed!"));
+    while (1) delay(0);
+  }
+  Serial.println("\r\nInitialisation done.");
 
   // The jpeg image can be scaled by a factor of 1, 2, 4, or 8
   TJpgDec.setJpgScale(1);
