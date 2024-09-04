@@ -132,8 +132,8 @@ UPDATE: It was not the card. Even though the example code specifically says to i
 * [rotary_encoder](rotary_encoder) This is not one of the included programs, but I will need a rotating dial for a project and this was just a quick test. This was the hook up with the included connector
 ![Rotary Encoder connections](rotary_encoder.png)
 Seems to work fine given 3.3 volts. Thanks to [The Drone Bot Workshop](https://dronebotworkshop.com/rotary-encoders-arduino/) for a place to start. Encoder was left over from a [light up dress project](https://www.youtube.com/watch?v=S583nWCTwY8)
-
+* [sd_mp3](sd_mp3) This is the included example to play an MP3 from an SD card. It worked unchanged after adding a speaker that was less than an inch across to the wires labeled "SPEAK" on the board and adding "ESP8266Audio" to the lib_deps in the platformio.ini file.
 
 I have not been able to get the repo from rzeldent to run, but in a CYD (cheap yellow display) forum note, he seems to have hacked his copy for a different refresh rate. I will try a different board later, but I think I have what I need for now.
 
-I was able to get the rzeldent demo to run for another board
+I was able to get the rzeldent demo to run for another board. The ESP32-8048S043C ran his example great with no changes needed besides selecting the correct board
