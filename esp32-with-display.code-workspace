@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "lvgl_hello",
+			"path": "lvgl_hello"
+		}
+	],
+	"settings": {}
+}

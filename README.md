@@ -133,7 +133,12 @@ UPDATE: It was not the card. Even though the example code specifically says to i
 ![Rotary Encoder connections](rotary_encoder.png)
 Seems to work fine given 3.3 volts. Thanks to [The Drone Bot Workshop](https://dronebotworkshop.com/rotary-encoders-arduino/) for a place to start. Encoder was left over from a [light up dress project](https://www.youtube.com/watch?v=S583nWCTwY8)
 * [sd_mp3](sd_mp3) This is the included example to play an MP3 from an SD card. It worked unchanged after adding a speaker that was less than an inch across to the wires labeled "SPEAK" on the board and adding "ESP8266Audio" to the lib_deps in the platformio.ini file.
+* [lvgl_hello](lvgl_hello) This is the example from (Random Nerd Tutorials for the CYD)[https://randomnerdtutorials.com/lvgl-cheap-yellow-display-esp32-2432s028r/], but with all the touch-screen stuff removed and all but one LVGL label. It still needs the #defines for the board in the platformio.ini file and the last line:
+```
+'-D LV_CONF_PATH=${platformio.include_dir}/lv_conf.h'
+```
+allows you to put your lv_conf.h in the normal include directory. This was the first/smallest LVGL item that I could actually get to run and do so without warnings/errors
 
 I have not been able to get the repo from rzeldent to run, but in a CYD (cheap yellow display) forum note, he seems to have hacked his copy for a different refresh rate. I will try a different board later, but I think I have what I need for now.
 
-I was able to get the rzeldent demo to run for another board. The ESP32-8048S043C ran his example great with no changes needed besides selecting the correct board
+UPDATE: I was able to get the rzeldent demo to run for another board. The ESP32-8048S043C ran his example great with no changes needed besides selecting the correct board
